@@ -1,0 +1,56 @@
+1) Em qual horário existe transporte para o local?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?horas
+WHERE { a:local_Banco_do_Brasil a:temPontoMaisProximo ?ponto.
+	?linha a:temPontos ?ponto.
+	?linha a:temHorarios ?horarios.
+	?horarios a:temHora ?horas}
+
+
+2) Quais linhas tem um determinado ponto?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?nome
+WHERE { ?linha a:temPontos a:terminal_Fonte.
+	?linha a:temNome ?nome.}
+
+
+3) Quais são os horários de uma linha?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?horas
+WHERE { a:linha_Karpinsky a:temHorarios ?horarios.
+	?horarios a:temHora ?horas.}
+
+
+4) Qual é o itinerário para chegar ao local?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?itinerario
+WHERE { a:local_Banco_do_Brasil a:temPontoMaisProximo ?ponto.
+	?linha a:temPontos ?ponto.
+	?itinerario a:temLinhas ?linha}
+
+
+5) Qual é o ponto mais próximo do local?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?ponto
+WHERE { a:local_CEDETEG a:temPontoMaisProximo ?ponto.}
+
+
+6) Qual o custo total do itinerário?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT ?custo
+WHERE { a:itinerario_karpinski-tancredo a:temCusto ?custo .}
+
+
+7) Quais são os horários do ponto mais próximo de um local para outro local?
+prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+SELECT DISTINCT ?horas
+WHERE { a:local_Banco_do_Brasil a:temPontoMaisProximo ?pontoInicio.
+	a:local_CEDETEG a:temPontoMaisProximo ?pontoChegada.
+	?linhaChegada a:temPontos ?pontoChegada.
+	?linhaInicio a:temPontos ?pontoInicio.
+	?itinerario a:temLinhas ?linhaChegada.
+	?itinerario a:temLinhas ?linhaInicio.
+	?pontoInicio a:temHorarios ?horariosInicio.
+	?linhaChegada a:temHorarios ?horariosLinha.
+	?horariosInicio a:temHora ?horas. }
+
