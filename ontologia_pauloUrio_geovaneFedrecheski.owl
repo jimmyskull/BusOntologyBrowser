@@ -17,17 +17,17 @@
   <owl:Class rdf:ID="Pontos">
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Local onde o transporte faz escala.</rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:ID="Horarios">
-    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Horario em que um transporte faz escala em um ponto.</rdfs:comment>
+  <owl:Class rdf:ID="Horários">
+    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Horário em que um transporte faz escala em um ponto.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="Locais">
-    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Destino de um Itinerario.</rdfs:comment>
+    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Destino de um itinerário.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="Terminais">
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Ponto de troca de linhas.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#Pontos"/>
   </owl:Class>
-  <owl:Class rdf:ID="Itinerarios">
+  <owl:Class rdf:ID="Itinerários">
     <rdfs:comment xml:lang="pt">OBSERVAÇÃO: http://en.wiktionary.org/wiki/itinerary</rdfs:comment>
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Rota proposta para uma jornada.</rdfs:comment>
   </owl:Class>
@@ -37,7 +37,7 @@
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Conjunto ordenado de pontos que compõem uma linha.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="temHorarios">
-    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Horarios que um  transporte passa em um ponto.</rdfs:comment>
+    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Horários que um  transporte passa em um ponto.</rdfs:comment>
     <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -46,7 +46,7 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
-    <rdfs:range rdf:resource="#Horarios"/>
+    <rdfs:range rdf:resource="#Horários"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="temPontoMaisProximo">
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Ponto mais próximo de um local.</rdfs:comment>
@@ -55,12 +55,12 @@
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="temLinhas">
     <rdfs:range rdf:resource="#Linhas"/>
-    <rdfs:domain rdf:resource="#Itinerarios"/>
+    <rdfs:domain rdf:resource="#Itinerários"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="temHora">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="#Horarios"/>
-    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Valor de uma instância de Horario.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Horários"/>
+    <rdfs:comment xml:lang="pt">DEFINIÇÃO: Valor de uma instância de horário.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="temNome">
@@ -79,7 +79,7 @@
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Palavra que designa qualquer entidade, como linha, ponto ou local.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:FunctionalProperty rdf:ID="temCusto">
-    <rdfs:domain rdf:resource="#Itinerarios"/>
+    <rdfs:domain rdf:resource="#Itinerários"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="pt">DEFINIÇÃO: Custo para utilização do transporte público.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
@@ -90,28 +90,28 @@
     <temPontoMaisProximo>
       <Pontos rdf:ID="ponto_Vila_Concordia">
         <temHorarios>
-          <Horarios rdf:ID="horario_11h22m">
+          <Horários rdf:ID="horario_11h22m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >11h22m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h22m">
+          <Horários rdf:ID="horario_06h22m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h22m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h22m">
+          <Horários rdf:ID="horario_07h22m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h22m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h52m">
+          <Horários rdf:ID="horario_06h52m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h52m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
       </Pontos>
     </temPontoMaisProximo>
@@ -123,16 +123,16 @@
     <temPontoMaisProximo>
       <Pontos rdf:ID="ponto_Posto_Baitala">
         <temHorarios>
-          <Horarios rdf:ID="horario_06h16m">
+          <Horários rdf:ID="horario_06h16m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h16m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_12h18m">
+          <Horários rdf:ID="horario_12h18m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >12h18m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
       </Pontos>
     </temPontoMaisProximo>
@@ -141,22 +141,22 @@
     <temPontoMaisProximo>
       <Pontos rdf:ID="ponto_Hotel_San_Marino">
         <temHorarios>
-          <Horarios rdf:ID="horario_06h58m">
+          <Horários rdf:ID="horario_06h58m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h58m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h28m">
+          <Horários rdf:ID="horario_07h28m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h28m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h28m">
+          <Horários rdf:ID="horario_06h28m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h28m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
       </Pontos>
     </temPontoMaisProximo>
@@ -167,105 +167,105 @@
     <temPontoMaisProximo>
       <Pontos rdf:ID="ponto_Antiga_Perdigao">
         <temHorarios>
-          <Horarios rdf:ID="horario_07h00m">
+          <Horários rdf:ID="horario_07h00m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h00m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h30m">
+          <Horários rdf:ID="horario_06h30m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h30m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h30m">
+          <Horários rdf:ID="horario_07h30m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h30m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
       </Pontos>
     </temPontoMaisProximo>
     <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >CEDETEG</temNome>
   </Locais>
-  <Itinerarios rdf:ID="itinerario_karpinski-tancredo">
+  <Itinerários rdf:ID="itinerario_karpinski-tancredo">
     <temLinhas>
       <Linhas rdf:ID="linha_Tancredo">
         <temPontos>
           <Pontos rdf:ID="ponto_AABB">
             <temHorarios>
-              <Horarios rdf:ID="horario_06h57m">
+              <Horários rdf:ID="horario_06h57m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h57m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h27m">
+              <Horários rdf:ID="horario_07h27m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h27m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h27m">
+              <Horários rdf:ID="horario_06h27m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h27m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_11h27m">
+              <Horários rdf:ID="horario_11h27m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >11h27m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
           </Pontos>
         </temPontos>
         <temHorarios rdf:resource="#horario_11h22m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h18m">
+          <Horários rdf:ID="horario_06h18m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h18m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temPontos>
           <Pontos rdf:ID="ponto_Colegio_Newton">
             <temHorarios>
-              <Horarios rdf:ID="horario_06h50m">
+              <Horários rdf:ID="horario_06h50m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h50m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h20m">
+              <Horários rdf:ID="horario_06h20m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h20m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_11h20m">
+              <Horários rdf:ID="horario_11h20m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >11h20m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h20m">
+              <Horários rdf:ID="horario_07h20m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h20m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
           </Pontos>
         </temPontos>
         <temHorarios>
-          <Horarios rdf:ID="horario_11h40m">
+          <Horários rdf:ID="horario_11h40m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >11h40m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h18m">
+          <Horários rdf:ID="horario_07h18m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h18m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_07h22m"/>
         <temHorarios rdf:resource="#horario_07h20m"/>
@@ -281,60 +281,60 @@
             <temHorarios rdf:resource="#horario_07h00m"/>
             <temHorarios rdf:resource="#horario_06h30m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_11h30m">
+              <Horários rdf:ID="horario_11h30m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >11h30m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_07h30m"/>
           </Pontos>
         </temPontos>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h46m">
+          <Horários rdf:ID="horario_06h46m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h46m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_07h27m"/>
         <temPontos>
           <Pontos rdf:ID="ponto_Colegio_Belem">
             <temHorarios rdf:resource="#horario_06h16m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h16m">
+              <Horários rdf:ID="horario_07h16m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h16m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_11h16m">
+              <Horários rdf:ID="horario_11h16m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >11h16m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_06h46m"/>
           </Pontos>
         </temPontos>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h48m">
+          <Horários rdf:ID="horario_06h48m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h48m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_07h16m"/>
         <temHorarios rdf:resource="#horario_11h27m"/>
         <temHorarios rdf:resource="#horario_11h16m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_11h18m">
+          <Horários rdf:ID="horario_11h18m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >11h18m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_06h22m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h10m">
+          <Horários rdf:ID="horario_07h10m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h10m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_06h20m"/>
         <temHorarios rdf:resource="#horario_06h27m"/>
@@ -349,59 +349,59 @@
         <temHorarios rdf:resource="#horario_07h30m"/>
         <temHorarios rdf:resource="#horario_06h16m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h40m">
+          <Horários rdf:ID="horario_07h40m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h40m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temPontos>
           <Terminais rdf:ID="terminal_Fonte">
             <temHorarios rdf:resource="#horario_07h40m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h45m">
+              <Horários rdf:ID="horario_06h45m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h45m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >Terminal da Fonte</temNome>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h08m">
+              <Horários rdf:ID="horario_07h08m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h08m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h40m">
+              <Horários rdf:ID="horario_06h40m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h40m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_07h10m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_11h15m">
+              <Horários rdf:ID="horario_11h15m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >11h15m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h15m">
+              <Horários rdf:ID="horario_07h15m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h15m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_11h40m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_12h05m">
+              <Horários rdf:ID="horario_12h05m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >12h05m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h38m">
+              <Horários rdf:ID="horario_06h38m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h38m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
           </Terminais>
         </temPontos>
@@ -418,57 +418,57 @@
       <Linhas rdf:ID="linha_Karpinsky">
         <temHorarios rdf:resource="#horario_07h30m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_12h12m">
+          <Horários rdf:ID="horario_12h12m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >12h12m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_06h38m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_12h14m">
+          <Horários rdf:ID="horario_12h14m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >12h14m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_12h23m">
+          <Horários rdf:ID="horario_12h23m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >12h23m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_06h28m"/>
         <temPontos rdf:resource="#ponto_Hotel_San_Marino"/>
         <temPontos rdf:resource="#terminal_Fonte"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h25m">
+          <Horários rdf:ID="horario_06h25m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h25m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h05m">
+          <Horários rdf:ID="horario_07h05m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h05m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_07h28m"/>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h33m">
+          <Horários rdf:ID="horario_07h33m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h33m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h25m">
+          <Horários rdf:ID="horario_07h25m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h25m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios>
-          <Horarios rdf:ID="horario_07h03m">
+          <Horários rdf:ID="horario_07h03m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >07h03m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temPontos>
           <Pontos rdf:ID="ponto_Bar_Sao_Paulo">
@@ -481,20 +481,20 @@
             <temHorarios rdf:resource="#horario_06h25m"/>
             <temHorarios rdf:resource="#horario_07h25m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h55m">
+              <Horários rdf:ID="horario_06h55m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h55m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >Terminal do Trevo</temNome>
           </Terminais>
         </temPontos>
         <temHorarios>
-          <Horarios rdf:ID="horario_06h35m">
+          <Horários rdf:ID="horario_06h35m">
             <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >06h35m</temHora>
-          </Horarios>
+          </Horários>
         </temHorarios>
         <temHorarios rdf:resource="#horario_12h18m"/>
         <temHorarios rdf:resource="#horario_06h58m"/>
@@ -502,10 +502,10 @@
           <Pontos rdf:ID="ponto_Hiper_Superm">
             <temHorarios rdf:resource="#horario_06h16m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_12h09m">
+              <Horários rdf:ID="horario_12h09m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >12h09m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
           </Pontos>
         </temPontos>
@@ -513,10 +513,10 @@
           <Pontos rdf:ID="ponto_Pizzaria_Medieval">
             <temHorarios rdf:resource="#horario_07h33m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_06h33m">
+              <Horários rdf:ID="horario_06h33m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >06h33m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_07h03m"/>
           </Pontos>
@@ -529,10 +529,10 @@
           <Pontos rdf:ID="ponto_Constrular">
             <temHorarios rdf:resource="#horario_07h05m"/>
             <temHorarios>
-              <Horarios rdf:ID="horario_07h35m">
+              <Horários rdf:ID="horario_07h35m">
                 <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >07h35m</temHora>
-              </Horarios>
+              </Horários>
             </temHorarios>
             <temHorarios rdf:resource="#horario_06h35m"/>
           </Pontos>
@@ -549,16 +549,16 @@
     </temLinhas>
     <temCusto rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
     >2.5</temCusto>
-  </Itinerarios>
+  </Itinerários>
   <Locais rdf:ID="local_Superpao_Hiper">
     <temPontoMaisProximo rdf:resource="#ponto_Hiper_Superm"/>
     <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Superpão Hiper</temNome>
   </Locais>
-  <Horarios rdf:ID="horario_07h38m">
+  <Horários rdf:ID="horario_07h38m">
     <temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >07h38m</temHora>
-  </Horarios>
+  </Horários>
   <Locais rdf:ID="local_Banco_do_Brasil">
     <temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Banco do Brasil</temNome>
