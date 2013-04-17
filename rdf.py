@@ -9,16 +9,15 @@
 # 	python2-pyparsing
 import rdflib
 import rdfextras
+
 rdfextras.registerplugins()
 
-filename = "ontology.rdf"
-
 g = rdflib.Graph()
-g.parse(filename)
+g.parse("ontology.rdf")
 
 results = g.query("""
 SELECT 
-	?p ?o
+	?s ?p ?o
 WHERE {
 	?s ?p ?o.
 }
