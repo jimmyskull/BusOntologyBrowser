@@ -1,6 +1,6 @@
 require 'sparql/client'
 
-file = "./ontology.rdf"
+file = "http://localhost:8890/sparql"
 
 #uri = RDF::URI.new(file)
 #puts(uri)
@@ -11,5 +11,5 @@ sparql = SPARQL::Client.new(file)
 query = sparql.select.where([:s, :p, :o]).offset(100).limit(10)
 
 query.each_solution do |solution|
-  puts solution.inspect
+  puts solution[:s]
 end
