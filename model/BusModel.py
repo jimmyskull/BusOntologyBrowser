@@ -13,66 +13,83 @@ class BusModel(Model):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT ?horas
-			WHERE { a:{local} a:temPontoMaisProximo ?ponto.
+			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
 			?linha a:temPontos ?ponto.
 			?linha a:temHorarios ?horarios.
-			?horarios a:temHora ?horas}
-			""".format(local=local))
+			?horarios a:temHora ?horas}}
+			""".format(local))
 		return results
 
 	def buscar_linhas_em_um_ponto(self, ponto):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT ?nome
-			WHERE {{ ?linha a:temPontos a:{ponto}.
+			WHERE {{ ?linha a:temPontos a:{0}.
 			?linha a:temNome ?nome.}}
-			""".format(ponto=ponto))
+			""".format(ponto))
 		return results
 
 	def buscar_horarios_linha(self, linha):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT ?horas
-			WHERE { a:linha_Karpinsky a:temHorarios ?horarios.
-			?horarios a:temHora ?horas.}
-			""".format(ponto=ponto))
+			WHERE {{ a:{0} a:temHorarios ?horarios.
+			?horarios a:temHora ?horas.}}
+			""".format(linha))
 		return results
 
 	def buscar_itinerario_para_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT ?itinerario
-			WHERE { a:{local} a:temPontoMaisProximo ?ponto.
+			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
 			?linha a:temPontos ?ponto.
-			?itinerario a:temLinhas ?linha}
-			""".format(local=local))
+			?itinerario a:temLinhas ?linha}}
+			""".format(local))
 		return results
 
 	def buscar_ponto_proximo_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT ?ponto
-			WHERE { a:{local} a:temPontoMaisProximo ?ponto.}
-			""".format(local=local))
+			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.}}
+			""".format(local))
 		return results
 
 	def buscar_horarios_ponto_proximo_para_outro_local(self, start_local, end_local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
 			SELECT DISTINCT ?horas
-			WHERE { a:{start_local} a:temPontoMaisProximo ?pontoInicio.
-			a:{end_local} a:temPontoMaisProximo ?pontoChegada.
+			WHERE {{ a:{0} a:temPontoMaisProximo ?pontoInicio.
+			a:{1} a:temPontoMaisProximo ?pontoChegada.
 			?linhaChegada a:temPontos ?pontoChegada.
 			?linhaInicio a:temPontos ?pontoInicio.
 			?itinerario a:temLinhas ?linhaChegada.
 			?itinerario a:temLinhas ?linhaInicio.
 			?pontoInicio a:temHorarios ?horariosInicio.
 			?linhaChegada a:temHorarios ?horariosLinha.
-			?horariosInicio a:temHora ?horas. }
-			""".format(start_local=start_local, end_local=end_local))
+			?horariosInicio a:temHora ?horas. }}
+			""".format(start_local, end_local))
 		return results
 
 if __name__ == '__main__':
 	bm = BusModel("../ontology.rdf")
-	for r in bm.buscar_horarios_ponto_proximo_para_outro_local("local_Banco_do_Brasil", "local_CEDETEG"):
+	print "\n"
+	for r in bm.buscar_horarios_para_local("local_CEDETEG"):
 		print r[0]
+	print "\n"
+	for r in bm.buscar_linhas_em_um_ponto("terminal_Fonte"):
+		print r[0]
+	print "\n"
+	for r in bm.buscar_horarios_linha("linha_Karpinsky"):
+		print r[0]
+	print "\n"
+	for r in bm.buscar_itinerario_para_local("local_CEDETEG"):
+		print r[0]
+	print "\n"
+	for r in bm.buscar_ponto_proximo_local("local_CEDETEG"):
+		print r[0]
+	print "\n"
+	for r in bm.buscar_horarios_ponto_proximo_para_outro_local("local_Superpao_Hiper", "local_CEDETEG"):
+		print r[0]
+	print "\n"
