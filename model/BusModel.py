@@ -41,18 +41,20 @@ class BusModel(Model):
 	def buscar_itinerario_para_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
-			SELECT ?itinerario
+			SELECT ?nome
 			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
 			?linha a:temPontos ?ponto.
-			?itinerario a:temLinhas ?linha}}
+			?itinerario a:temLinhas ?linha.
+			?itinerario a:temNome ?nome.}}
 			""".format(local))
 		return results
 
 	def buscar_ponto_proximo_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
-			SELECT ?ponto
-			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.}}
+			SELECT ?nome
+			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
+			?ponto a:temNome ?nome.}}
 			""".format(local))
 		return results
 
@@ -73,7 +75,7 @@ class BusModel(Model):
 		return results
 
 if __name__ == '__main__':
-	bm = BusModel("../ontology.rdf")
+	bm = BusModel("../bus_ontology_browser.rdf")
 	print "\n"
 	for r in bm.buscar_horarios_para_local("local_CEDETEG"):
 		print r[0]
@@ -84,7 +86,7 @@ if __name__ == '__main__':
 	for r in bm.buscar_horarios_linha("linha_Karpinsky"):
 		print r[0]
 	print "\n"
-	for r in bm.buscar_itinerario_para_local("local_CEDETEG"):
+	for r in bm.buscar_itinerario_para_local("local_Banco_do_Brasil"):
 		print r[0]
 	print "\n"
 	for r in bm.buscar_ponto_proximo_local("local_CEDETEG"):
