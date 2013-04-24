@@ -4,6 +4,9 @@ from view.TextView import TextView
 from model.BusModel import BusModel
 
 if __name__ == '__main__':
-	menu = MenuController(BusModel("ontology.rdf"), TextView())
-	menu.main()
+	try:
+		menu = MenuController(BusModel("bus_ontology_browser.rdf"), TextView())
+		menu.main()
+	except KeyboardInterrupt:
+		print '\b'
 
