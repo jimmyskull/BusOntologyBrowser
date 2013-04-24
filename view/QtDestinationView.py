@@ -1,16 +1,11 @@
 from PyQt4 import QtCore, QtGui
-from ui.Ui_MainWindow import Ui_MainWindow
+from design.Ui_Destination import Ui_Destination
 
-class QtMainView(QtGui.QMainWindow, Ui_MainWindow):
+class QtDestinationView(QtGui.QWidget, Ui_Destination):
     def __init__(self, controller, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        self.centerOnScreen()
-        self.connect(self.lineEdit, QtCore.SIGNAL('textChanged(QString)'), self.lineEditChanged)
-        self.controller = controller
-        
-    def lineEditChanged(self, text):
-        self.controller.setFrom(text)
+        #self.centerOnScreen()
         
     def centerOnScreen(self):
         resolution = QtGui.QDesktopWidget().screenGeometry()
