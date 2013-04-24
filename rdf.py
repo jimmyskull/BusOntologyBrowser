@@ -1,20 +1,29 @@
 # -*- encoding: utf-8 -*-
 #!/usr/bin/python2
-import rdflib
 import rdfextras
-
+import rdflib
 rdfextras.registerplugins()
 
-g = rdflib.Graph()
-g.parse("ontology.rdf")
 
-results = g.query("""
-prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
-SELECT ?itinerario
-WHERE { a:local_Banco_do_Brasil a:temPontoMaisProximo ?ponto.
-	?linha a:temPontos ?ponto.
-	?itinerario a:temLinhas ?linha}
-""")
+g = rdflib.Graph()
+g.parse("bus_ontology_browser.rdf")
+
+results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
+                     SELECT ?linhas
+                     WHERE {?linhas rdf:type a:Linhas } """)
+
+
+for r in results:
+	print r[0]
+
+
+g.add((rdflib["novaLinha"],"rdf:type","Linhas"))
+g.commit()
+
+results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
+                     SELECT ?linhas
+                     WHERE {?linhas rdf:type a:Linhas } """)
+
 
 for r in results:
 	print r[0]
