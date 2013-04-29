@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Ui_ListResults.ui'
 #
-# Created: Wed Apr 24 14:50:28 2013
+# Created: Mon Apr 29 16:56:14 2013
 #      by: PyQt4 UI code generator 4.10.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -35,6 +35,11 @@ class Ui_ListResults(object):
         self.verticalLayout = QtGui.QVBoxLayout(ListResults)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.label = QtGui.QLabel(ListResults)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
         self.verticalLayout.addWidget(self.label)
         self.listWidget = QtGui.QListWidget(ListResults)
