@@ -8,6 +8,24 @@ import rdfextras
 class BusModel(Model):
 	def __init__(self, filename):
 		Model.__init__(self, filename)
+		
+	# Retorna lista de "Nome do local/ponto" "Ponto mais proximo/Ponto"
+	def buscar_pontos_ou_locais(self, filtro):
+		pontos = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome ?ponto
+			WHERE { ?ponto a:temNome ?nome }
+			""")
+		locais = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome ?ponto
+			WHERE { ?local a:temNome ?nome .
+				?local a:temPontoMaisProximo ?ponto }
+			""")
+		f = filtro.lower()
+		result = list(pontos) + list(locais)
+		return filter(lambda r: f in r[0].lower(), result)
+
 
 	def buscar_horarios_para_local(self, local):
 		results = self.g.query("""
@@ -95,3 +113,5 @@ if __name__ == '__main__':
 	for r in bm.buscar_horarios_ponto_proximo_para_outro_local("local_Superpao_Hiper", "local_CEDETEG"):
 		print r[0]
 	print "\n"
+	for r in bm.buscar_pontos_ou_locais("co"):
+		print r[0].encode('iso-8859-1'), r[1]

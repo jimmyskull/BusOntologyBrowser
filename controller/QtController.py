@@ -15,14 +15,27 @@ class QtMainController(object):
         
         self.listresults_view.setLabelText('Teste')
         
-    def setFrom(self, value):
-        print "atualizar busca para", value 
+    def updateSpotList(self, view, value):
+        self.spot_list = self.model.buscar_pontos_ou_locais(str(value))
+        view.setContent(self.spot_list)
+        
+    def selectSpot(self, view, item):
+		if view == self.mainwindow_view:
+			self.updateSpotList(self.destination_view, '')
+			self.destination_view.show()
+			self.destination_view.activateWindow()
+		else:
+			print 'todo'
+        
+    def GoBack(self, view):
+        view.close()
 
     def show(self):
+        self.updateSpotList(self.mainwindow_view, '')
         self.mainwindow_view.show()
-        self.destination_view.show()
-        self.listresults_view.show()
-        self.route_view.show()
+        #self.destination_view.show()
+        #self.listresults_view.show()
+        #self.route_view.show()
     
 def main(model):
     app = QtGui.QApplication(sys.argv)
