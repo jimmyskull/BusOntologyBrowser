@@ -24,7 +24,7 @@ class BusModel(Model):
 			""")
 		f = filtro.lower()
 		result = list(pontos) + list(locais)
-		return filter(lambda r: f in r[0].lower(), result)
+		return filter(lambda r: f in r[0].lower(), result), pontos, locais
 
 
 	def buscar_horarios_para_local(self, local):
@@ -38,6 +38,15 @@ class BusModel(Model):
 			""".format(local))
 		return results
 
+
+	def buscar_ponto(self, ponto):
+		results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome
+			WHERE {{ a:{0} a:temNome ?nome.}}
+			""".format(ponto))
+		return [list(results)[0][0], 'http://ontokem.egc.ufsc.br/ontologia#' + ponto]
+		
 	def buscar_linhas_em_um_ponto(self, ponto):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
@@ -59,18 +68,81 @@ class BusModel(Model):
 	def buscar_itinerario_para_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
-			SELECT ?nome
+			SELECT ?itinerario
 			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
 			?linha a:temPontos ?ponto.
 			?itinerario a:temLinhas ?linha.
 			?itinerario a:temNome ?nome.}}
 			""".format(local))
 		return results
+		
+	def buscar_itinerario_para_ponto(self, ponto):
+		results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?itinerario
+			WHERE {{ 
+			?linha a:temPontos a:{0}.
+			?itinerario a:temLinhas ?linha.
+			?itinerario rdf:type ?Itinerarios.}}
+			""".format(ponto))
+		return results
+	
+	def buscar_qual_linha_tem_ponto_de_um_itinerario(self, itinerario, ponto):
+		results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome
+			WHERE {{ a:{0} a:temLinhas ?linhas.
+					 ?linhas a:temPontos a:{1}.
+					 ?linhas a:temNome ?nome.
+			}}""".format(itinerario, ponto))
+		return list(results)
+	
+	def buscar_linhas_do_itinerario(self, itinerario):
+		results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?linhas
+			WHERE {{ 
+				a:{0} a:temLinhas ?linhas.
+			}}""".format(itinerario))
+		return results
+		
+	# nome pode ser um ponto ou local
+	def buscar_ponto_origem_itinerario(self, origem, destino):
+		origem_eh_local = 'local_' in origem
+		destino_eh_local = 'local_' in destino
+		if destino_eh_local:
+			iti = self.buscar_itinerario_para_local(destino)
+		else:
+			iti = self.buscar_itinerario_para_ponto(destino)
+		itinerario = list(iti)[0][0][37:]
+
+		print 'ITINERARIO: ', itinerario
+		
+		if origem_eh_local:
+			ptorigem = list(self.buscar_ponto_proximo_local(origem))[0]
+			print '** ORIGEM1', ptorigem
+			ResultadoOrigem = ptorigem
+		else:
+			print '** ORIGEM2', list(self.buscar_ponto(origem))
+			ResultadoOrigem = list(self.buscar_ponto(origem))
+
+		if destino_eh_local:
+			ptdestino = list(self.buscar_ponto_proximo_local(destino))[0]
+			print '** DESTINO1', ptdestino
+			ResultadoDestino = ptdestino
+		else:
+			print '** DESTINO2', list(self.buscar_ponto(destino))
+			ResultadoDestino = list(self.buscar_ponto(destino))
+			
+		linhaOrigem = self.buscar_qual_linha_tem_ponto_de_um_itinerario(itinerario, ResultadoOrigem[1][37:])
+		linhaDestino = self.buscar_qual_linha_tem_ponto_de_um_itinerario(itinerario, ResultadoDestino[1][37:])
+		return [ResultadoOrigem, linhaOrigem, ResultadoDestino, linhaDestino]
+		
 
 	def buscar_ponto_proximo_local(self, local):
 		results = self.g.query("""
 			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
-			SELECT ?nome
+			SELECT ?nome ?ponto
 			WHERE {{ a:{0} a:temPontoMaisProximo ?ponto.
 			?ponto a:temNome ?nome.}}
 			""".format(local))
@@ -106,6 +178,11 @@ if __name__ == '__main__':
 	print "\n"
 	for r in bm.buscar_itinerario_para_local("local_Banco_do_Brasil"):
 		print r[0]
+	for r in bm.buscar_linhas_do_itinerario('itinerario_karpinski-tancredo'):
+		print r[0]
+
+	print bm.buscar_ponto_origem_itinerario('local_CEDETEG', 'ponto_Colegio_Belem')
+	raise
 	print "\n"
 	for r in bm.buscar_ponto_proximo_local("local_CEDETEG"):
 		print r[0]

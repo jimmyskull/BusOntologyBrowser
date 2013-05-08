@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Ui_SelectSpot.ui'
 #
-# Created: Mon Apr 29 16:56:13 2013
+# Created: Wed May  8 10:51:48 2013
 #      by: PyQt4 UI code generator 4.10.1
 #
 # WARNING! All changes made in this file will be lost!

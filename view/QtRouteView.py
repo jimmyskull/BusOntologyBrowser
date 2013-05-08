@@ -5,7 +5,11 @@ class QtRouteView(QtGui.QWidget, Ui_Route):
     def __init__(self, controller, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        #self.centerOnScreen()
+        self.centerOnScreen()
+        
+    def setArrows(self, _from, _to):
+		self.lblFrom.setText(_from)
+		self.lblTo.setText(_to)
         
     def centerOnScreen(self):
         resolution = QtGui.QDesktopWidget().screenGeometry()
