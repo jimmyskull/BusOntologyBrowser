@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:base="http://ontokem.egc.ufsc.br/ontologia#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h05m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h05m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Hiper_Superm">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Supermercado SuperpÃ£o Hiper</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h09m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Vila_Concordia">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vila ConcÃ³rdia</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h22m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h52m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h22m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h22m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Pizzaria_Medieval">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pizzaria Medieval</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h33m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h33m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h03m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h30m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h30m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temNome">
+    <rdfs:domain rdf:nodeID="N8ac63d7bee8c4dc683ae4ab48ed59d71"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Palavra que designa qualquer entidade, como linha, ponto ou local.</rdfs:comment>
+    <rdfs:comment xml:lang="pt">OBSERVAÃ‡ÃƒO: http://www.dicio.com.br/nome/</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Horarios">
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Horario em que um transporte faz escala em um ponto.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Linhas">
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Um segmento finito de pontos de escala do transporte, com um ponto inicial geralmente sendo uma terminal e um ponto final, que pode ser igual ao ponto inicial.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h20m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h20m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_DPASCHOAL">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DPASCHOAL</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Posto_Baitala"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h46m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h46m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h28m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h28m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h40m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h40m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#terminal_Trevo">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terminal do Trevo</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h55m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h25m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h25m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Terminais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h23m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h23m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9336acc28caf444b8ab703a8eea37056">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:rest rdf:nodeID="N4d48a583bd4d4843a020c3ace12fdea9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_Banco_do_Brasil">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Banco do Brasil</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Colegio_Belem"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h40m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h40m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h28m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h28m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h57m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h57m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h58m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h58m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#linha_Karpinsky">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linha Karpinski</base:temNome>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Constrular"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Hiper_Superm"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Pizzaria_Medieval"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Hotel_San_Marino"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#terminal_Trevo"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Bar_Sao_Paulo"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#terminal_Fonte"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Antiga_Perdigao"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Posto_Baitala"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h05m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h12m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h05m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h33m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h38m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h08m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h00m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h28m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h33m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h35m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h23m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h55m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h25m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h28m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h14m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h58m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h09m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h03m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h35m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h25m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h35m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h35m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Antiga_Perdigao">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antiga PerdigÃ£o</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h00m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h30m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h12m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h12m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h05m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h05m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h18m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h18m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#linha_Tancredo">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linha Tancredo</base:temNome>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Colegio_Newton"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Vila_Concordia"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_AABB"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Colegio_Belem"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Rua_Cel_Saldanha"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Nucleo_Tancredo_Neves"/>
+    <base:temPontos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#terminal_Fonte"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h16m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h27m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h22m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h00m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h15m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h46m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h20m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h15m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h20m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h16m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h27m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h27m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h52m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h20m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h22m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h48m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h57m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h22m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h10m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h45m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h18m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temPontos">
+    <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Conjunto ordenado de pontos que compÃµem uma linha.</rdfs:comment>
+    <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h18m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h18m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Locais">
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Destino de um itinerario.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ac63d7bee8c4dc683ae4ab48ed59d71">
+    <owl:unionOf rdf:nodeID="Na76201ea72eb4de9a6320ea9f9aa92c0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h15m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h15m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h18m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h18m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h35m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h35m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Terminais">
+    <rdfs:subClassOf rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Ponto de troca de linhas.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h30m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h30m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h20m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h20m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#terminal_Fonte">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terminal da Fonte</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h15m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h05m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h15m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h10m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h45m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h38m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h40m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h08m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Terminais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h14m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h14m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h18m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h18m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_Ginasio_da_Concordia">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ginasio da ConcÃ³rdia</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Vila_Concordia"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Itinerarios">
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Rota proposta para uma jornada.</rdfs:comment>
+    <rdfs:comment xml:lang="pt">OBSERVAÃ‡ÃƒO: http://en.wiktionary.org/wiki/itinerary</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Hotel_San_Marino">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hotel San Marino</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h58m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h28m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h28m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h03m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h03m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d48a583bd4d4843a020c3ace12fdea9">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Terminais"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_AABB">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AABB</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h27m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h27m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h57m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h27m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_Panificadora_Santo_Pao">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panificadora Santo PÃ£o</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#terminal_Fonte"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N77557cda90c1476c9c1f9e4dff8e9147">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdf:rest rdf:nodeID="N354824596b834680bad039d2363b2dcf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h25m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h25m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#linha_Santa_Cruz">
+    <base:name>Santa Cruz</base:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h40m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h40m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h08m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h08m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_Superpao_Hiper">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SuperpÃ£o Hiper</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Hiper_Superm"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h20m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h20m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#itinerario_karpinski-tancredo">
+    <base:temLinhas rdf:resource="http://ontokem.egc.ufsc.br/ontologia#linha_Karpinsky"/>
+    <base:temLinhas rdf:resource="http://ontokem.egc.ufsc.br/ontologia#linha_Tancredo"/>
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linhas Karpinski-Trancredo</base:temNome>
+    <base:temCusto rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.5</base:temCusto>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Itinerarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h33m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h33m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Rua_Cel_Saldanha">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rua Cel Saldanha</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h48m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h18m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6584c144ce0d45518ade5960044f112d">
+    <owl:unionOf rdf:nodeID="N77557cda90c1476c9c1f9e4dff8e9147"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h55m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h55m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Nucleo_Tancredo_Neves">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nucleo Tancredo Neves</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h30m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h00m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h27m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h27m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temCusto">
+    <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Itinerarios"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Custo para utilizaÃ§Ã£o do transporte pÃºblico.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h48m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h48m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h50m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h50m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Airton_Senna_Iraque">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Airton Senna Iraque</base:temNome>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h38m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h38m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temLinhas">
+    <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Itinerarios"/>
+    <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na76201ea72eb4de9a6320ea9f9aa92c0">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Itinerarios"/>
+    <rdf:rest rdf:nodeID="N6feed5472e0940f9a2adf800bcf4d327"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h16m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h16m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h33m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h33m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Colegio_Belem">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ColÃ©gio BelÃ©m</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h46m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h16m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h16m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h22m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h22m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Bar_Sao_Paulo">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bar SÃ£o Paulo</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h12m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_Parque_das_CrianÃ§as">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parque das CrianÃ§as</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Hotel_San_Marino"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h52m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h52m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h00m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h00m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h30m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h30m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h45m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h45m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h15m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h15m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#Pontos">
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Local onde o transporte faz escala.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h38m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h38m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#local_CEDETEG">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CEDETEG</base:temNome>
+    <base:temPontoMaisProximo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#ponto_Antiga_Perdigao"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N354824596b834680bad039d2363b2dcf">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h16m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h16m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h27m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h27m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h27m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h27m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Posto_Baitala">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Posto Baitala</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_12h18m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Colegio_Newton">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ColÃ©gio Newton</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h20m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h50m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_11h20m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h20m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6feed5472e0940f9a2adf800bcf4d327">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Linhas"/>
+    <rdf:rest rdf:nodeID="Ne6512935dabd4275aed39c8496b2580b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h25m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h25m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h22m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h22m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temHora">
+    <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Valor de uma instÃ¢ncia de horario.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temHorarios">
+    <rdfs:domain rdf:nodeID="N6584c144ce0d45518ade5960044f112d"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Horarios que um  transporte passa em um ponto.</rdfs:comment>
+    <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#temPontoMaisProximo">
+    <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdfs:comment xml:lang="pt">DEFINIÃ‡ÃƒO: Ponto mais prÃ³ximo de um local.</rdfs:comment>
+    <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#ponto_Constrular">
+    <base:temNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constrular</base:temNome>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h05m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_06h35m"/>
+    <base:temHorarios rdf:resource="http://ontokem.egc.ufsc.br/ontologia#horario_07h35m"/>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Pontos"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/geonnave/College/TECC-Ontologias/ontologia_pauloUrio_geovaneFedrecheski.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_11h22m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11h22m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_12h09m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12h09m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_07h10m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07h10m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontokem.egc.ufsc.br/ontologia#horario_06h16m">
+    <base:temHora rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06h16m</base:temHora>
+    <rdf:type rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Horarios"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6512935dabd4275aed39c8496b2580b">
+    <rdf:first rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Locais"/>
+    <rdf:rest rdf:nodeID="N9336acc28caf444b8ab703a8eea37056"/>
+  </rdf:Description>
+</rdf:RDF>

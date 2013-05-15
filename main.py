@@ -16,5 +16,6 @@ def gui_version():
 if __name__ == '__main__':
 	try:
 		gui_version()
+		# text_version()
 	except KeyboardInterrupt:
 		print '\b'
