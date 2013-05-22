@@ -5,3 +5,5 @@ class Controller(object):
 		self.model = model
 		self.view = view
 
+	def finish(self):
+		self.model.finish()

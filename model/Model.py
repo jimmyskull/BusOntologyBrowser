@@ -9,3 +9,9 @@ class Model(object):
 		rdfextras.registerplugins()
 		self.g = rdflib.Graph()
 		self.g.parse(filename)
+
+	def finish(self):
+		f = open('bus_ontology.rdf', 'w')
+		f.write(str(self.g.serialize()))
+		f.close()
+		self.g.close()

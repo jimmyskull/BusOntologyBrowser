@@ -1,14 +1,18 @@
 # -*- encoding: utf-8 -*-
 from Model import Model
+from Insert import Insert
 
 import rdflib
 import rdfextras
+from rdflib import ConjunctiveGraph, plugin, Namespace, Literal, URIRef
+from rdflib.store import NO_STORE, VALID_STORE, Store
+
 
 
 class BusModel(Model):
 	def __init__(self, filename):
 		Model.__init__(self, filename)
-		
+
 	# Retorna lista de "Nome do local/ponto" "Ponto mais proximo/Ponto"
 	def buscar_pontos_ou_locais(self, filtro):
 		pontos = self.g.query("""
@@ -163,32 +167,45 @@ class BusModel(Model):
 			?horariosInicio a:temHora ?horas. }}
 			""".format(start_local, end_local))
 		return results
+	
+	def inserir_linha(self, linha, nome):
+		rdflib = Namespace('http://ontokem.egc.ufsc.br/ontologia#')
+		self.g.add((rdflib[linha], rdflib['temNome'], Literal(nome)))
+		self.g.commit()
+
+	def inserir_horarios_linha(self, linha, horarios):
+		pass
+
+	def inserir_pontos_linha(self, linha, pontos):
+		pass
 
 if __name__ == '__main__':
-	bm = BusModel("../bus_ontology_browser.rdf")
-	print "\n"
-	for r in bm.buscar_horarios_para_local("local_CEDETEG"):
-		print r[0]
-	print "\n"
-	for r in bm.buscar_linhas_em_um_ponto("terminal_Fonte"):
-		print r[0]
-	print "\n"
+	bm = BusModel("../bus_ontology.rdf")
+	# bm = BusModel("../bus_ontology_browser.rdf")
+	# print "\n"
+	# for r in bm.buscar_horarios_para_local("local_CEDETEG"):
+	# 	print r[0]
+	# print "\n"
+	# for r in bm.buscar_linhas_em_um_ponto("terminal_Fonte"):
+	# 	print r[0]
+	# print "\n"
+	bm.inserir_linha("linha_UNICENTRO11", "UNICENTRO11")
 	for r in bm.buscar_horarios_linha("linha_Karpinsky"):
 		print r[0]
 	print "\n"
-	for r in bm.buscar_itinerario_para_local("local_Banco_do_Brasil"):
-		print r[0]
-	for r in bm.buscar_linhas_do_itinerario('itinerario_karpinski-tancredo'):
-		print r[0]
+	# for r in bm.buscar_itinerario_para_local("local_Banco_do_Brasil"):
+	# 	print r[0]
+	# for r in bm.buscar_linhas_do_itinerario('itinerario_karpinski-tancredo'):
+	# 	print r[0]
 
-	print bm.buscar_ponto_origem_itinerario('local_CEDETEG', 'ponto_Colegio_Belem')
-	raise
-	print "\n"
-	for r in bm.buscar_ponto_proximo_local("local_CEDETEG"):
-		print r[0]
-	print "\n"
-	for r in bm.buscar_horarios_ponto_proximo_para_outro_local("local_Superpao_Hiper", "local_CEDETEG"):
-		print r[0]
-	print "\n"
-	for r in bm.buscar_pontos_ou_locais("co"):
-		print r[0].encode('iso-8859-1'), r[1]
+	# print bm.buscar_ponto_origem_itinerario('local_CEDETEG', 'ponto_Colegio_Belem')
+	# raise
+	# print "\n"
+	# for r in bm.buscar_ponto_proximo_local("local_CEDETEG"):
+	# 	print r[0]
+	# print "\n"
+	# for r in bm.buscar_horarios_ponto_proximo_para_outro_local("local_Superpao_Hiper", "local_CEDETEG"):
+	# 	print r[0]
+	# print "\n"
+	# for r in bm.buscar_pontos_ou_locais("co"):
+	# 	print r[0].encode('iso-8859-1'), r[1]
