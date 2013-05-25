@@ -1,0 +1,21 @@
+import os, os.path
+
+import rdflib.sparql.parser
+
+DAWG_ROOT='test/DAWG/data-r2/'
+
+def files_dir(folder):
+    for f in sorted(os.listdir(folder)):
+        yield os.path.join(folder, f)
+        
+ 
+def files(): 
+    for f in files_dir(DAWG_ROOT+'syntax-sparql1'):
+        yield f
+
+def test_syntax(): 
+
+    for f in files(): 
+        
+        parser.QueryUnit.parseFile(f)
+    

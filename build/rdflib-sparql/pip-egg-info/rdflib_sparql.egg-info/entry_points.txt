@@ -1,0 +1,17 @@
+[rdf.plugins.queryresult]
+sparql = rdflib_sparql.processor:SPARQLResult
+
+[rdf.plugins.resultparser]
+xml = rdflib_sparql.results.xmlresults:XMLResultParser
+tsv = rdflib_sparql.results.tsvresults:TSVResultParser
+json = rdflib_sparql.results.jsonresults:JSONResultParser
+csv = rdflib_sparql.results.csvresults:CSVResultParser
+
+[rdf.plugins.queryprocessor]
+sparql = rdflib_sparql.processor:SPARQLProcessor
+
+[rdf.plugins.resultserializer]
+xml = rdflib_sparql.results.xmlresults:XMLResultSerializer
+json = rdflib_sparql.results.jsonresults:JSONResultSerializer
+csv = rdflib_sparql.results.csvresults:CSVResultSerializer
+

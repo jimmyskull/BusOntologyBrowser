@@ -4,7 +4,7 @@ from Insert import Insert
 
 import rdflib
 import rdfextras
-from rdflib import ConjunctiveGraph, plugin, Namespace, Literal, URIRef
+from rdflib import ConjunctiveGraph, plugin, Namespace, Literal, URIRef, XSD, RDF
 from rdflib.store import NO_STORE, VALID_STORE, Store
 
 
@@ -170,7 +170,8 @@ class BusModel(Model):
 	
 	def inserir_linha(self, linha, nome):
 		rdflib = Namespace('http://ontokem.egc.ufsc.br/ontologia#')
-		self.g.add((rdflib[linha], rdflib['temNome'], Literal(nome)))
+		self.g.add((rdflib[linha], RDF.type, Literal("Linhas")))
+		self.g.add((rdflib[linha], rdflib['temNome'], Literal(nome, datatype=XSD.string)))
 		self.g.commit()
 
 	def inserir_horarios_linha(self, linha, horarios):

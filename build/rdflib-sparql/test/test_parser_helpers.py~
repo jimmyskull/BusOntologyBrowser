@@ -1,0 +1,10 @@
+from rdflib_sparql.parser import BlankNodePropertyList, TriplesSameSubject
+from rdflib_sparql.evaluate import triples
+
+def pt(ts):
+    for t in ts:
+        print t
+
+def test_1(): 
+    
+    pt(triples(TripleSameSubject.parseString("[ :p ?o ]")))

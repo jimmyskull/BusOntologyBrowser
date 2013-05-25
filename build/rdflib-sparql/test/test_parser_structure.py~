@@ -1,0 +1,6 @@
+
+
+import rdflib_sparql.parser
+import pprint
+
+rdflib_sparql.parser.parseQuery("SELECT * WHERE { ?s ?p ?o, ?o2 ; ?p2 ?o3 ; ?p3 [ ?p ?o ] . ?s2 ?p ?o .} ")

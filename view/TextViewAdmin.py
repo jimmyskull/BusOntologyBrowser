@@ -10,12 +10,11 @@ class TextViewAdmin(View):
 		print "                          Menu Administrador"
 		print "========================================================================="
 		print "1. Inserir uma nova linha."
-		print "2. Inserir pontos de uma linha."
-		print "3. Inserir horários de uma linha."
+		print "2. Remover uma linha."
 		
 	def read_input(self):
 		MIN = 1
-		MAX = 3
+		MAX = 2
 		try:
 			question = raw_input('Entre um valor ({} - {}) >. '.format(MIN, MAX))	
 			if question == "sair":

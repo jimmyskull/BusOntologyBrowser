@@ -1,0 +1,12 @@
+
+import rdflib
+
+
+
+
+def test_dawg():
+
+    g=rdflib.Graph()
+    g.load("test/DAWG/data-r2/manifest-evaluation.ttl", format='turtle')
+
+    

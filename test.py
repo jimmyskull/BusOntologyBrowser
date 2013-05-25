@@ -1,42 +1,34 @@
+
 import rdflib
-from rdflib.graph import ConjunctiveGraph as Graph
-from rdflib import plugin
-from rdflib.store import Store, NO_STORE, VALID_STORE
-from rdflib.namespace import Namespace
-from rdflib.term import Literal
-from rdflib.term import URIRef
-from tempfile import mkdtemp
+import rdfextras
+# from rdflib import sparql
 
-default_graph_uri = "http://rdflib.net/rdfstore"
-configString = "/var/tmp/rdfstore"
 
-# Get the Sleepycat plugin.
-store = plugin.get('Sleepycat', Store)('rdfstore')
+rdfextras.registerplugins()
 
-# Open previously created store, or create it if it doesn't exist yet
-graph = Graph(store="Sleepycat",
-              identifier = URIRef(default_graph_uri))
-path = mkdtemp()
-rt = graph.open(path, create=False)
-if rt == NO_STORE:
-    # There is no underlying Sleepycat infrastructure, create it
-    graph.open(path, create=True)
-else:
-    assert rt == VALID_STORE, "The underlying store is corrupt"
 
-print "Triples in graph before add: ", len(graph)
+g = rdflib.Graph()
+g.parse("bus_ontology.rdf")
 
-# Now we'll add some triples to the graph & commit the changes
-rdflib = Namespace('http://rdflib.net/test/')
-graph.bind("test", "http://rdflib.net/test/")
+# results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
+#                      SELECT ?linhas
+#                      WHERE {?linhas rdf:type a:Linhas} """)
+results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
+                     SELECT DISTINCT ?linhas
+                     WHERE {
+                     	?linhas rdf:type ?type
+                     	{?linhas rdf:type "Linhas"}
+                     UNION
+                     	{?linhas rdf:type a:Linhas}
+                     } """)
+# processUpdate(g, """PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
+#                      DELETE ?linhas
+#                      WHERE {
+#                      	a:Linhas a:temNome "llllll"
+#                      } """)
 
-graph.add((rdflib['pic:1'], rdflib['name'], Literal('Jane & Bob')))
-graph.add((rdflib['pic:2'], rdflib['name'], Literal('Squirrel in Tree')))
-graph.commit()
 
-print "Triples in graph after add: ", len(graph)
+for r in results:
+	print r[0]
 
-# display the graph in RDF/XML
-print graph.serialize()
 
-graph.close()

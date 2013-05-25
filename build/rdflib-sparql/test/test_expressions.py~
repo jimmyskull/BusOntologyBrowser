@@ -1,0 +1,14 @@
+
+
+import rdflib_sparql.parser as p 
+
+
+def testRegex():
+    
+    p.RegexExpression.parseString('REGEX("abc","zxcabczxc")')
+
+
+
+if __name__=='__main__':
+    import nosetest
+    nosetest.main()
