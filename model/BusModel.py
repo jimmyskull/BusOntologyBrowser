@@ -130,7 +130,12 @@ class BusModel(Model):
 			iti = self.buscar_itinerario_para_local(destino)
 		else:
 			iti = self.buscar_itinerario_para_ponto(destino)
-		itinerario = list(iti)[0][0][37:]
+		if not list(iti):
+			print '\033[31;1mNão existe rota para este local.\033[0m'
+			return
+		itinerario = list(iti)[0][0]
+		if '#' in itinerario:
+			itinerario = itinerario.split('#')[1]
 
 		print 'ITINERARIO: ', itinerario
 		
