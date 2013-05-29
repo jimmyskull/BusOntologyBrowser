@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+import sys
 from model.BusModel import BusModel
 
 # ONTOLOGIA = "bus_ontology_browser.rdf"
@@ -22,8 +23,25 @@ def gui_version():
 
 if __name__ == '__main__':
 	try:
-		# gui_version()
-		# text_version()
-		text_version_admin()
+		gui = False
+		admin = False
+		askhelp = False
+		if len(sys.argv) > 1:
+			gui = '--gui' in sys.argv
+			admin = '--admin' in sys.argv
+			askhelp = '--help' in sys.argv
+		if askhelp:
+			print 'BusOntologyBrowser help'
+			print '{} [OPTION]'.format(sys.argv[0])
+			print '\t--admin\tStart admin menu'
+			print '\t--gui\tStart version with graphical interface'
+			print '\t--text\tStart interactive text mode version'
+			exit(0)
+		if gui:
+			gui_version()
+		elif admin:
+			text_version_admin()
+		else:
+			text_version()
 	except KeyboardInterrupt:
 		print '\b'

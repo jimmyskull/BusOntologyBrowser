@@ -8,7 +8,7 @@ class MenuControllerAdmin(Controller):
 			1: self._choice_insert_stop,
 			2: self._choice_insert_time,
 			3: self._choice_insert_local,
-			"sair": self.finish}}
+			"sair": self.finish}
 
 	def _choice_insert_stop(self):
 		stop = self.view.read_stop_id()

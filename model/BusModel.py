@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 from Model import Model
-from Insert import Insert
 
 import rdflib
 import rdfextras
@@ -104,6 +103,13 @@ class BusModel(Model):
 			WHERE {{ a:{0} a:temLinhas ?linhas.
 					 ?linhas a:temPontos a:{1}.
 					 ?linhas a:temNome ?nome.
+			}}""".format(itinerario, ponto))
+		if not list(results):
+			results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome
+			WHERE {{ a:{0} a:temLinhas ?linhas.
+					 a:{1} a:temNome ?nome.
 			}}""".format(itinerario, ponto))
 		return list(results)
 	

@@ -41,6 +41,8 @@ class QtMainController(object):
 			self.route_view.setArrows(sorigin, sdest)
 			route = self.model.buscar_ponto_origem_itinerario(origin[1][37:], dest[1][37:])
 			
+			print '*** ROTA', route
+			print '**** ROTA1', route[1]
 			textoOrigem = route[0][0].encode('iso-8859-1').decode('utf8') + '\n' +\
 				 route[1][0][0].encode('iso-8859-1').decode('utf8')
 				
