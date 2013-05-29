@@ -4,9 +4,8 @@ from Insert import Insert
 
 import rdflib
 import rdfextras
-from rdflib import ConjunctiveGraph, plugin, Namespace, Literal, URIRef, XSD, RDF
+from rdflib import ConjunctiveGraph, plugin, Namespace, Literal, URIRef, XSD, RDF, RDFS
 from rdflib.store import NO_STORE, VALID_STORE, Store
-
 
 
 class BusModel(Model):
@@ -42,6 +41,13 @@ class BusModel(Model):
 			""".format(local))
 		return results
 
+	def ponto_existe(self, ponto):
+		results = self.g.query("""
+			prefix a:<http://ontokem.egc.ufsc.br/ontologia#>
+			SELECT ?nome
+			WHERE {{ a:{0} a:temNome ?nome.}}
+			""".format(ponto))
+		return True if (len(results) > 0) else False
 
 	def buscar_ponto(self, ponto):
 		results = self.g.query("""
@@ -168,37 +174,48 @@ class BusModel(Model):
 			""".format(start_local, end_local))
 		return results
 	
-	def inserir_linha(self, linha, nome):
+	def inserir_ponto(self, ponto, nome, horarios):
 		rdflib = Namespace('http://ontokem.egc.ufsc.br/ontologia#')
-		self.g.add((rdflib[linha], RDF.type, Literal("Linhas")))
-		self.g.add((rdflib[linha], rdflib['temNome'], Literal(nome, datatype=XSD.string)))
+		self.g.add((rdflib[ponto], RDF.type, rdflib["Pontos"]))
+		self.g.add((rdflib[ponto], rdflib['temNome'], Literal(nome, datatype=XSD.string)))
+		self.g.commit()
+		for hid, hnome in zip(horarios[0], horarios[1]):
+			self.inserir_horario(hid, hnome)
+			self.g.add((rdflib[ponto], rdflib["temHorarios"], rdflib[hid]))
 		self.g.commit()
 
-	def inserir_horarios_linha(self, linha, horarios):
-		pass
+	def inserir_local(self, local, nome, ponto):
+		rdflib = Namespace('http://ontokem.egc.ufsc.br/ontologia#')
+		self.g.add((rdflib[local], RDF.type, rdflib["Locais"]))
+		self.g.add((rdflib[local], rdflib['temNome'], Literal(nome, datatype=XSD.string)))
+		self.g.add((rdflib[local], rdflib['temPontoMaisProximo'], rdflib[ponto]))
+		self.g.commit()
 
-	def inserir_pontos_linha(self, linha, pontos):
-		pass
+	def inserir_horario(self, horario, nome):
+		rdflib = Namespace('http://ontokem.egc.ufsc.br/ontologia#')
+		self.g.add((rdflib[horario], RDF.type, rdflib["Horarios"]))
+		s = self.g.add((rdflib[horario], rdflib['temHora'], Literal(nome, datatype=XSD.string)))
+		self.g.commit()
 
 if __name__ == '__main__':
 	bm = BusModel("../bus_ontology.rdf")
 	# bm = BusModel("../bus_ontology_browser.rdf")
 	# print "\n"
-	# for r in bm.buscar_horarios_para_local("local_CEDETEG"):
-	# 	print r[0]
-	# print "\n"
+	for r in bm.buscar_horarios_para_local("local_CEDETEG"):
+		print r[0]
+	print "\n"
 	# for r in bm.buscar_linhas_em_um_ponto("terminal_Fonte"):
 	# 	print r[0]
 	# print "\n"
-	bm.inserir_linha("linha_UNICENTRO11", "UNICENTRO11")
-	for r in bm.buscar_horarios_linha("linha_Karpinsky"):
-		print r[0]
-	print "\n"
+	# bm.inserir_linha("linha_UNICENTRO11", "UNICENTRO11")
+	# for r in bm.buscar_horarios_linha("linha_Karpinsky"):
+	# 	print r[0]
+	# print "\n"
 	# for r in bm.buscar_itinerario_para_local("local_Banco_do_Brasil"):
 	# 	print r[0]
 	# for r in bm.buscar_linhas_do_itinerario('itinerario_karpinski-tancredo'):
 	# 	print r[0]
-
+	print bm.ponto_existe("ponto_Pizzaria_Medieval")
 	# print bm.buscar_ponto_origem_itinerario('local_CEDETEG', 'ponto_Colegio_Belem')
 	# raise
 	# print "\n"
