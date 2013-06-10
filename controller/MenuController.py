@@ -10,7 +10,8 @@ class MenuController(Controller):
 			3: self._choice_list_line_schedule,
 			4: self._choice_list_itinerary_lines,
 			5: self._choice_list_bus_spot_near_location,
-			6: self._choice_list_available_schedules_of_initial_itinerary_bus_stop}
+			6: self._choice_list_available_schedules_of_initial_itinerary_bus_stop,
+			"sair": self.finish}
 
 	# Questão 1
 	def _choice_lines_having_a_spot(self):
@@ -53,6 +54,8 @@ class MenuController(Controller):
 		self.choices[ch] = callback
 
 	def main(self):
-		while True:
+		i = ""
+		while i != "sair":
 			self.view.show_menu()
-			self.choices[self.view.read_input()]()
+			i = self.view.read_input()
+			self.choices[i]()

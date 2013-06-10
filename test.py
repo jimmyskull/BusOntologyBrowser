@@ -1,34 +1,22 @@
-
 import rdflib
 import rdfextras
-# from rdflib import sparql
-
+from rdflib import URIRef
 
 rdfextras.registerplugins()
 
 
+
 g = rdflib.Graph()
-g.parse("bus_ontology.rdf")
-
-# results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
-#                      SELECT ?linhas
-#                      WHERE {?linhas rdf:type a:Linhas} """)
-results = g.query("""PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
-                     SELECT DISTINCT ?linhas
-                     WHERE {
-                     	?linhas rdf:type ?type
-                     	{?linhas rdf:type "Linhas"}
-                     UNION
-                     	{?linhas rdf:type a:Linhas}
-                     } """)
-# processUpdate(g, """PREFIX a:<http://ontokem.egc.ufsc.br/ontologia#> 
-#                      DELETE ?linhas
-#                      WHERE {
-#                      	a:Linhas a:temNome "llllll"
-#                      } """)
+g.parse("http://dbpedia.org/resource/Elvis_Presley")
 
 
-for r in results:
-	print r[0]
+name = g.subject_objects(URIRef("http://dbpedia.org/property/name"))
+birth = g.subject_objects(URIRef("http://dbpedia.org/ontology/birthDate"))
 
+print "bla"
+
+for b in birth:
+     print "Data de nascimento: {}".format(b[1])
+for n in name:
+     print "Nome de nascimento: ", str(n[1])
 

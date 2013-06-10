@@ -20,7 +20,10 @@ class TextView(View):
 		MAX = 6
 		try:
 			question = raw_input('Entre um valor ({} - {}) >. '.format(MIN, MAX))	
+			if question == "sair":
+				return question 
 			answer = int(question) 
+			print answer
 			if not answer in range(MIN, MAX + 1):
 				raise ValueError
 			return answer
